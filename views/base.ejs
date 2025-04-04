@@ -7,14 +7,18 @@
     <title>
         <%= title %>
     </title>
-    <link rel="stylesheet"             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styless.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- Navbar -->
     <%- include('partials/navbar') %>
         <!-- Main content -->
-        <div class="container my-4">
+        <div class="container">
             <!-- Render the specific view content here -->
             <%- include(view) %>
         </div>

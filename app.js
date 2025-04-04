@@ -5,6 +5,9 @@ const db = require("./models");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Configuração para servir arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Configuração do EJS como view engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
