@@ -1,11 +1,31 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database'); // Ajuste o caminho conforme necessário
+const { UniqueConstraintError } = require("sequelize");
 
-const Professor = sequelize.define('Professor', {
+module.exports = (sequelize, DataTypes) => {
+  const Professor = sequelize.define("Professor", {
     nome: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-});
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      },
+    },
+    formacao: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    materia: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    horario: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  });
 
-module.exports = Professor;
+  return Professor;
+};

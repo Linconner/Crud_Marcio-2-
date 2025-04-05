@@ -1,0 +1,70 @@
+.titulo {
+  color: #827cd2;
+  font-size: 92px;
+  text-align: center;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.paragrafo1 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.custom-footer {
+  background-color: #e5c7ff;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.custom-navbar {
+  background-color: #e5c7ff;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #ffffff !important;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 1.5rem;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #827cd2 !important;
+}
+
+/* Destaque do link ativo na navbar */
+.custom-navbar .nav-link.active {
+  background-color: #c9b6ff; /* Cor mais escura de destaque */
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+.imgyaycat {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.titulo2 {
+  color: #827cd2;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

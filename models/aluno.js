@@ -1,11 +1,23 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database'); // Ajuste o caminho conforme necessário
-
-const Aluno = sequelize.define('Aluno', {
-    nome: {
+module.exports = (sequelize, DataTypes) => {
+    const Aluno = sequelize.define("aluno", {
+      nome: {
         type: DataTypes.STRING,
-        allowNull: false
-    }
-});
-
-module.exports = Aluno;
+        allowNull: false,
+      },
+      horario: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      matricula: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true, //só um aluno pode ter uma matrícula
+      },
+      itinerario: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    });
+    return Aluno;
+  };
+  

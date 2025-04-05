@@ -1,0 +1,31 @@
+<h1>Lista de Alunos</h1>
+<a href="/aluno/add" class="btn btn-success mb-3">Adicionar Aluno</a>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Horário</th>
+      <th>Matrícula</th>
+      <th>Itinerário</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% alunos.forEach(aluno => { %>
+      <tr>
+        <td><%= aluno.id %></td>
+        <td><%= aluno.nome %></td>
+        <td><%= aluno.horario %></td>
+        <td><%= aluno.matricula %></td>
+        <td><%= aluno.itinerario %></td>
+        <td>
+          <a href="/aluno/edit/<%= aluno.id %>" class="btn btn-primary btn-sm">Editar</a>
+          <form action="/aluno/delete/<%= aluno.id %>" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
