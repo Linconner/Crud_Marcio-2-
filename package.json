@@ -1,15 +1,14 @@
 {
   "name": "crud_basico",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "crud_basico": "file:",
     "ejs": "^3.1.10",
     "ejs-layouts": "^0.0.1",
     "express": "^4.21.2",
