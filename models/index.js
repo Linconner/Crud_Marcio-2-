@@ -1,21 +1,14 @@
-const { Sequelize, DataTypes } = require("sequelize");
-const config = require("../config/config.json");
+const Sequelize = require("sequelize");
+const config = require("../config/config.json")["development"];
 
-const sequelize = new Sequelize(config.development);
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 const db = {};
+
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Professores = require("./professores")(sequelize, DataTypes);
-db.Aluno = require("./aluno")(sequelize, DataTypes);
-
-Object.keys(db).forEach((modelName) => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-});
-
-
+db.Aluno = require("./alunos")(sequelize, Sequelize.DataTypes);
+db.Professor = require("./professores")(sequelize, Sequelize.DataTypes);
 
 module.exports = db;

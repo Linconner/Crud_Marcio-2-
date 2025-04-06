@@ -1,21 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-  const Professor = sequelize.define("Professor", {
+  const Aluno = sequelize.define("Aluno", {
     nome: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isEmail: true,
-      },
-    },
-    formacao: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    materia: {
+    matricula: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    itinerario: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
 
-  return Professor;
+  return Aluno;
 };

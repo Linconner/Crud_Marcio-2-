@@ -68,3 +68,34 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+.Alunoshow {
+ font-family: "Fredoka", sans-serif;
+ color: #827cd2;
+ -webkit-text-stroke: 5px #827cd2;
+ font-size: 80px;
+}
+
+.btn-custom-add {
+  background-color: #b1aee2;
+  color: #000000;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  padding: 12px 60px;  
+  width: auto;         
+  display: inline-block;
+  font-family: 'Fredoka', sans-serif;
+  -webkit-text-stroke: #000000 2px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom-add:hover {
+  background-color: #a19cdf;
+  cursor: pointer;
+}
+
+.table-custom thead {
+  background-color: #b4abed;
+  
+}

@@ -1,5 +1,5 @@
 <h1>Adicionar Aluno</h1>
-<form action="/aluno/add" method="POST">
+<form action="/alunos/add" method="POST">
   <div class="form-group">
     <label for="nome">Nome</label>
     <input type="text" class="form-control" id="nome" name="nome" required>
@@ -22,9 +22,11 @@
   <div class="form-group">
     <label for="itinerario">Itinerário</label>
     <select class="form-control" id="itinerario" name="itinerario" required>
-      <option value="Itinerário 1">Humanas</option>
-      <option value="Itinerário 2">Exatas</option>
-      <option value="Itinerário 3">Biológicas</option>
+      <option value="Humanas">Humanas</option>
+      <option value="Exatas">Exatas</option>
+      <option value="Biológicas">Biológicas</option>
+    </select>
+  </div>
 
-  <button type="submit" class="btn btn-primary">Adicionar</button>
+  <button type="submit" class="btn btn-primary">Add</button>
 </form>

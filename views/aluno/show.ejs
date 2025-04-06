@@ -1,12 +1,16 @@
-<h1>Lista de Alunos</h1>
-<a href="/aluno/add" class="btn btn-success mb-3">Adicionar Aluno</a>
-<table class="table table-bordered">
+<h1 class="Alunoshow">Alunos</h1>
+<div>
+  <a href="/alunos/add" class="btn-custom-add mb-3">Add Aluno</a>
+</div>
+
+<br>
+<table class="table table-bordered table custom">
   <thead>
     <tr>
       <th>ID</th>
       <th>Nome</th>
-      <th>Horário</th>
       <th>Matrícula</th>
+      <th>Horário</th>
       <th>Itinerário</th>
       <th>Ações</th>
     </tr>
@@ -16,13 +20,13 @@
       <tr>
         <td><%= aluno.id %></td>
         <td><%= aluno.nome %></td>
-        <td><%= aluno.horario %></td>
         <td><%= aluno.matricula %></td>
+        <td><%= aluno.horario %></td>
         <td><%= aluno.itinerario %></td>
         <td>
-          <a href="/aluno/edit/<%= aluno.id %>" class="btn btn-primary btn-sm">Editar</a>
-          <form action="/aluno/delete/<%= aluno.id %>" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+          <a href="/alunos/edit/<%= aluno.id %>" class="btn btn-primary btn-sm">Editar</a>
+          <form action="/alunos/delete/<%= aluno.id %>" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
           </form>
         </td>
       </tr>

@@ -1,5 +1,5 @@
 <h1>Editar Aluno</h1>
-<form action="/aluno/edit/<%= aluno.id %>" method="POST">
+<form action="/alunos/edit/<%= aluno.id %>" method="POST">
   <div class="form-group">
     <label for="nome">Nome</label>
     <input type="text" class="form-control" id="nome" name="nome" value="<%= aluno.nome %>" required>
@@ -7,7 +7,11 @@
 
   <div class="form-group">
     <label for="horario">Horário</label>
-    <input type="text" class="form-control" id="horario" name="horario" value="<%= aluno.horario %>" required>
+    <select class="form-control" id="horario" name="horario" required>
+      <option value="Manhã" <%= aluno.horario === "Manhã" ? "selected" : "" %>>Manhã</option>
+      <option value="Tarde" <%= aluno.horario === "Tarde" ? "selected" : "" %>>Tarde</option>
+      <option value="Noite" <%= aluno.horario === "Noite" ? "selected" : "" %>>Noite</option>
+    </select>
   </div>
 
   <div class="form-group">
@@ -17,7 +21,11 @@
 
   <div class="form-group">
     <label for="itinerario">Itinerário</label>
-    <input type="text" class="form-control" id="itinerario" name="itinerario" value="<%= aluno.itinerario %>" required>
+    <select class="form-control" id="itinerario" name="itinerario" required>
+      <option value="Humanas" <%= aluno.itinerario === "Humanas" ? "selected" : "" %>>Humanas</option>
+      <option value="Exatas" <%= aluno.itinerario === "Exatas" ? "selected" : "" %>>Exatas</option>
+      <option value="Biológicas" <%= aluno.itinerario === "Biológicas" ? "selected" : "" %>>Biológicas</option>
+    </select>
   </div>
 
   <button type="submit" class="btn btn-primary">Atualizar</button>

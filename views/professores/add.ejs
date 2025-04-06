@@ -1,8 +1,33 @@
-<h1>Adicionar professores</h1>
+<h1>Adicionar Professor</h1>
 <form action="/professores/add" method="POST">
-    <div class="form-group">
-        <label for="nome">Professores</label>
-        <input type="text" class="form-control" id="nome" name="nome" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" required>
+  </div>
+
+  <div class="form-group">
+    <label for="formacao">Formação</label>
+    <input type="text" class="form-control" id="formacao" name="formacao" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="materia">Matéria</label>
+    <input type="text" class="form-control" id="materia" name="materia" required>
+  </div>
+
+  <div class="form-group">
+    <label for="horario">Horário</label>
+    <select class="form-control" id="horario" name="horario" required>
+      <option value="Manhã">Manhã</option>
+      <option value="Tarde">Tarde</option>
+      <option value="Noite">Noite</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Adicionar</button>
 </form>

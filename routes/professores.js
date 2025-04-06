@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 
 router.get("/add", (req, res) => {
   res.render("base", {
-    title: "Adicionar Professor",
+    title: "Add Professor",
     view: "professores/add",
   });
 });
