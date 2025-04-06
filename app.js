@@ -3,11 +3,10 @@ const path = require("path");
 const app = express();
 const db = require("./models");
 
-// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Arquivos estáticos (CSS, imagens, etc)
+// Serve arquivos estáticos (CSS, imagens, etc)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Configuração da view engine EJS
@@ -23,8 +22,19 @@ app.use("/", indexRouter);
 app.use("/professores", professorRouter);
 app.use("/alunos", alunoRouter);
 
-// Sincroniza com o banco de dados
-db.sequelize.sync();
+// Sincroniza com o banco de dados e, se não estiver em produção, inicia o servidor
+db.sequelize.sync()
+  .then(() => {
+    if (process.env.NODE_ENV !== "production") {
+      app.listen(3000, () => {
+        console.log("Servidor em execução na porta 3000");
+      });
+    }
+  })
+  .catch(err => {
+    console.error("Erro ao conectar com o banco:", err);
+    process.exit(1);
+  });
 
-// Exporta o app para Vercel usar
+// Exporta o app para que a Vercel possa usá-lo
 module.exports = app;
