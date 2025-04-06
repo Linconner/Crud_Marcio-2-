@@ -1,11 +1,11 @@
 <h1 class="Alunoshow">Alunos</h1>
 <div>
-  <a href="/alunos/add" class="btn-custom-add mb-3">Add Aluno</a>
+  <a href="/alunos/add" class="btn-custom-add mb-3">Adicionar Aluno</a>
 </div>
 
 <br>
-<table class="table table-bordered table custom">
-  <thead>
+<table class="table table-bordered" style="width: 100%; border-collapse: collapse; font-family: 'Fredoka', sans-serif;">
+  <thead style="background-color: #b4abed;">
     <tr>
       <th>ID</th>
       <th>Nome</th>
@@ -15,7 +15,7 @@
       <th>Ações</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="background-color: #f6edff;">
     <% alunos.forEach(aluno => { %>
       <tr>
         <td><%= aluno.id %></td>
@@ -24,12 +24,22 @@
         <td><%= aluno.horario %></td>
         <td><%= aluno.itinerario %></td>
         <td>
-          <a href="/alunos/edit/<%= aluno.id %>" class="btn btn-primary btn-sm">Editar</a>
-          <form action="/alunos/delete/<%= aluno.id %>" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-          </form>
-        </td>
+            <a href="/alunos/edit/<%= aluno.id %>" class="btn btn-sm btn-primary" title="Editar"> <!-- L editar isso dps // editado já (M) -->
+              <i class="fas fa-edit"></i>
+            </a>
+          
+            <form action="/alunos/delete/<%= aluno.id %>" method="POST" class="d-inline"> 
+              <button type="submit" class="btn btn-sm btn-danger" title="Deletar">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </form>
+          </td>
+          
       </tr>
     <% }) %>
   </tbody>
 </table>
+
+<!-- Google Fonts import -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+Sans&display=swap" rel="stylesheet">
+<!-- eu quis mudar aqui pq a gente tinha tentado no css e tinha dado muito erro com o get de aluno que a gente ficou muito traumatizado 😭 -->

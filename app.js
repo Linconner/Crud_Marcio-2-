@@ -35,3 +35,4 @@ db.sequelize.authenticate()
     console.error('Erro ao conectar com o banco:', err);
     process.exit(1);
   });
+

@@ -1,7 +1,11 @@
-<h1>Professores</h1>
-<a href="/professores/add" class="btn btn-success mb-3">Add Professor</a>
-<table class="table table-bordered">
-    <thead>
+<h1 class="professoreshow">Professores</h1>
+<div>
+    <a href="/professores/add" class="btn btn-custom-add mb-3">Adicionar professor</a>
+</div>
+
+<br>
+    <table class="table table-bordered" style="width: 100%; border-collapse: collapse; font-family: 'Fredoka', sans-serif;">
+    <thead style="background-color: #b4abed;">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -12,7 +16,7 @@
             <th>Ações</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="background-color: #f6edff;;">
         <% professores.forEach(professor => { %>
         <tr>
             <td><%= professor.id %></td>
@@ -21,12 +25,17 @@
             <td><%= professor.formacao %></td>
             <td><%= professor.materia %></td>
             <td><%= professor.horario %></td>
+
             <td>
-                <a href="/professores/edit/<%= professor.id %>" class="btn btn-primary btn-sm">Editar</a>
-                <form action="/professores/delete/<%= professor.id %>" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                </form>
+                <a href="/professores/edit/<%= professor.id %>" class="btn btn-sm btn-primary" title="Editar">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <form action="/professores/delete/<%= professor.id %>" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-danger" title="Deletar">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
             </td>
+
         </tr>
         <% }) %>
     </tbody>
